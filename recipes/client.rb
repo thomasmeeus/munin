@@ -61,4 +61,5 @@ end
 service service_name do
   supports :restart => true
   action [:start, :enable]
+  provider Chef::Provider::Service::Upstart if platform?("ubuntu") && node["platform_version"].to_f >= 13.10
 end

@@ -86,6 +86,8 @@ munin_servers.sort! { |a, b| a['fqdn'] <=> b['fqdn'] }
 case node['platform']
 when 'freebsd'
   package 'munin-master'
+when 'ubuntu'
+  package 'munin-common'
 else
   package 'munin'
 end

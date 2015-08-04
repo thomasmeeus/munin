@@ -29,6 +29,7 @@ end
 munin_conf = File.join(node['nginx']['dir'], 'sites-available', 'munin.conf')
 
 template munin_conf do
+  cookbook node['munin']['template_cookbook']
   source   'nginx.conf.erb'
   mode     '0644'
   notifies :reload, 'service[nginx]' if ::File.symlink?(munin_conf)

@@ -150,3 +150,11 @@ directory node['munin']['docroot'] do
   group 'munin'
   mode  '0755'
 end
+
+package 'spawn-fcgi'
+
+
+template '/etc/init.d/munin-fastcgi' do
+  source 'init.conf.erb'
+  mode   '0755'
+end

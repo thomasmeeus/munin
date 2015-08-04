@@ -23,6 +23,7 @@ default['munin']['server_list'] = nil
 default['munin']['server_auth_method'] = 'openid'
 default['munin']['multi_environment_monitoring'] = false
 default['munin']['template_cookbook'] = 'munin'
+default['munin']['template_source'] = 'nginx.conf.erb'
 
 default['munin']['web_server'] = 'apache'
 default['munin']['web_server_port'] = 80
